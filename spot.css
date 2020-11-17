@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap");
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Patrick Hand SC", cursive;
+  background-color: #ccc;
+  margin: 0;
+  padding: 0;
+}
+.content {
+  margin: 0 auto;
+  width: 85vw;
+  background-color: #eee;
+  overflow: hidden;
+}
+.header {
+  background-image: url("./image/pawHeaderCopy.jpg");
+  width: 2000px;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: header 6s linear infinite;
+}
+@keyframes header {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-280px);
+  }
+}
+.title {
+  font-family: "Butterfly Kids", cursive;
+  font-size: 1.3em;
+  margin: 20px 0;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: inherit;
+  padding: 40px 20px;
+  box-shadow: 0px 10px 80px -10px rgba(44, 54, 92, 0.2);
+}
+.lock {
+  background: #8f8f8f;
+  padding: 30px;
+  /* border-top-right-radius: 20px;
+  border-top-right-radius: 20px; */
+  border-radius: 20px 20px 0 0;
+}
+.main {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  padding: 30px;
+}
+.chart {
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+}
+
+.anc {
+  border: 1px solid green;
+  display: block;
+  width: 100px;
+  height: 150px;
+  border-radius: 40px;
+  position: relative;
+  left: 570px;
+  top: -445px;
+}
+
+area {
+  border: 1px solid blue;
+}
+area:hover {
+  cursor: pointer;
+}
+/* .chart {
+  box-shadow: 0px 10px 80px -10px rgba(44, 54, 92, 0.2);
+} */
+form {
+  margin-left: 8%;
+  padding: 20px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 0px 20px 71px -14px #091c4f;
+  background-color: #b1b1b1;
+}
+.wrapper {
+  display: block;
+}
+.required::before {
+  content: "* Required";
+  color: red;
+  display: block;
+}
+.required::after {
+  content: "*";
+  color: red;
+}
+.go {
+  display: inline-flex;
+  text-align: center;
+  margin: 80px;
+  margin-bottom: 40px;
+  padding: 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+.go:hover {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+button {
+  display: inline-flex;
+  text-align: center;
+  margin: 80px;
+  margin-bottom: 40px;
+  padding: 15px;
+  border-radius: 50px;
+  color: #000;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+button:hover {
+  background-color: #2ee59d;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+/******Correct answer ************/
+
+.correct {
+  display: none;
+  position: fixed;
+  padding: 10%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0, 0.65);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+}
+.correct button {
+  font-size: 2rem;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.correct.show {
+  display: flex;
+}
+/**************Balloons******/
+/* .balloons {
+  display: inline;
+  border: 1px solid gold;
+}
+.ballooncontainer */
+.balloon {
+  display: inline-block;
+  /* width: 20%;
+  height: 32%; */
+  width: 120px;
+  height: 145px;
+  background: hsl(215, 50%, 65%);
+  border-radius: 80%;
+  position: relative;
+  box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.1);
+  margin: 40px 30px;
+  transition: transform 0.5s ease;
+  z-index: 10;
+  animation: balloons 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes balloons {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(4deg);
+  }
+}
+
+.balloon:before {
+  content: "▲";
+  font-size: 35%;
+  color: hsl(215, 30%, 50%);
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: -12px;
+  z-index: -100;
+}
+/* strings */
+.balloon:after {
+  display: inline-block;
+  top: 153px;
+  position: absolute;
+  /* top: 98px;
+  left: 34px; */
+  top: 150px;
+  left: 60px;
+  height: 250px;
+  width: 1px;
+  margin: 0 auto;
+  content: "";
+  background: white;
+}
+
+.balloon:nth-child(2) {
+  background: hsl(245, 40%, 65%);
+  animation-duration: 3.5s;
+}
+.balloon:nth-child(2):before {
+  color: hsl(245, 40%, 65%);
+}
+
+.balloon:nth-child(3) {
+  background: hsl(139, 50%, 60%);
+  animation-duration: 3s;
+}
+.balloon:nth-child(3):before {
+  color: hsl(139, 30%, 50%);
+}
+
+.balloon:nth-child(4) {
+  background: hsl(59, 50%, 58%);
+  animation-duration: 4.5s;
+}
+.balloon:nth-child(4):before {
+  color: hsl(59, 30%, 52%);
+}
+
+.balloon:nth-child(5) {
+  background: hsl(23, 55%, 57%);
+  animation-duration: 5s;
+}
+.balloon:nth-child(5):before {
+  color: hsl(23, 44%, 46%);
+}
+
+/*******  ANIMATION  *******************************/
+
+/****************/
+.position {
+  display: flex;
+}
+#container {
+  /* margin-top: 50px;
+  margin-left: 200px; */
+  height: 430px;
+  display: inline-block;
+  margin: auto;
+}
+
+.dog-head {
+  z-index: 100;
+  position: relative;
+  left: 0px;
+  /* top: 150px; */
+  /* margin: 0 auto;
+  height: 0px;
+  width: 0px; */
+  /* -webkit-animation: head-move 1s ease-in-out infinite; */
+  animation: head-move 1s ease-in-out infinite;
+}
+
+div.dog-body {
+  height: 300px;
+  width: 225px;
+  position: relative;
+  left: 35px;
+  top: -150px;
+  /* margin-top: -175px;
+  margin-left: 40px; */
+  background-image: url("http://www.clker.com/cliparts/T/0/9/J/e/4/dog-body-md.png");
+  background-repeat: no-repeat;
+}
+
+/*ANIMATIONS
+---------------------------------------------------------*/
+
+/* @-webkit-keyframes head-move {
+  50% {
+    -webkit-transform: rotate(-1.5deg);
+  }
+} */
+@keyframes head-move {
+  50% {
+    transform: rotate(-1.5deg);
+  }
+}
